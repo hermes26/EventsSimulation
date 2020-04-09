@@ -13,3 +13,18 @@
        "dist/subscriber/**/*.js"
     ]
  }
+ {
+    "type": "mysql",
+    "database": "../events-db.sql",
+    "synchronize": false,
+    "logging": false,
+    "entities": [
+       "dist/**/*.entity.js"
+    ],
+    "migrations": [
+       "dist/migration/**/*.js"
+    ],
+    "subscribers": [
+       "dist/subscriber/**/*.js"
+    ]
+ }

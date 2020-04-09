@@ -10,7 +10,40 @@ import {TypeOrmModule} from '@nestjs/typeorm';
   imports: [ReferenceModule, 
             IntegrationModule, 
             EventsModule, 
-            TypeOrmModule.forRoot()
+            TypeOrmModule.forRoot({
+              "type": "sqlite",
+              "database": "../test.db",
+              "synchronize": false,
+              "logging": false,
+              "entities": [
+                 "dist/**/*.entity.js"
+              ],
+              "migrations": [
+                 "dist/migration/**/*.js"
+              ],
+              "subscribers": [
+                 "dist/subscriber/**/*.js"
+              ]
+           }),
+            TypeOrmModule.forRoot({
+              "type": "mysql",
+              "username": "root",
+              "host": "localhost",
+              "port": 3306,
+              "name": "mysqlConnection",
+              "database": "events",
+              "synchronize": false,
+              "logging": false,
+              "entities": [
+                 "dist/**/*.entity.js"
+              ],
+              "migrations": [
+                 "dist/migration/**/*.js"
+              ],
+              "subscribers": [
+                 "dist/subscriber/**/*.js"
+              ]
+           })
   ],
   controllers: [AppController],
   providers: [AppService],
