@@ -7,7 +7,7 @@ import { Repository } from 'typeorm';
 export class DeviceService {
     constructor(@InjectRepository(Device) private readonly deviceRepository: Repository<Device>){}
 
-    findOne(id_device: number): Promise<Device> {
-        return this.deviceRepository.findOne(id_device);
+    async findOne(id_device: number): Promise<Device> {
+        return await this.deviceRepository.findOne(id_device);
     }
 }

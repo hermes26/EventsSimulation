@@ -10,6 +10,6 @@ import { CountryModule } from './country/country.module';
 
 @Module({
   imports: [VideoModule, UserModule, LocationModule, DeviceModule, DeviceCategoryModule, LanguageModule, CategoryModule, CountryModule],
-  exports: [DeviceModule]
+  exports: [UserModule, VideoModule, LocationModule, DeviceModule]
 })
 export class ReferenceModule {}
