@@ -5,6 +5,7 @@ import { ReferenceModule } from './reference/reference.module';
 import { IntegrationModule } from './integration/integration.module';
 import { EventsModule } from './events/events.module';
 import {TypeOrmModule} from '@nestjs/typeorm';
+import { CoreModule } from './core/core.module';
 
 @Module({
   imports: [ReferenceModule, 
@@ -43,7 +44,8 @@ import {TypeOrmModule} from '@nestjs/typeorm';
               "subscribers": [
                  "dist/subscriber/**/*.js"
               ]
-           })
+           }),
+            CoreModule
   ],
   controllers: [AppController],
   providers: [AppService],

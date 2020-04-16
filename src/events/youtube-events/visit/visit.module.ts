@@ -5,6 +5,7 @@ import { Visit } from './visit.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Visit])],
-  providers: [VisitService]
+  providers: [VisitService],
+  exports: [VisitService]
 })
 export class VisitModule {}
